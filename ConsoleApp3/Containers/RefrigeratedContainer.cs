@@ -13,7 +13,7 @@ public class RefrigeratedContainer : Container, IHazardNotifier
     {
         this.temperature = temperature;
         this.productType = productType;
-        this.SerialNumber = "Container Refrigerated: " + serialNumberCounter++;
+        this.SerialNumber = "Container Refrigerated Number: " + serialNumberCounter++;
     }
 
     public void Load(int amount, int productTemperature, string productType)

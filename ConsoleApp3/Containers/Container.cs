@@ -38,9 +38,12 @@ public abstract class Container
     }
     public override string ToString()
     {
-        return "Container number: " + SerialNumber + "\nCargo mass " + CargoMass
-               + "\nHazardous: " + Hazardous + "\nDepth " + Depth
-               + "\nOwn weight: " + OwnWeight + "\nMax cargo load: " + MaxCargoLoad
+        return "Container number: " + SerialNumber + 
+               "\nCargo mass " + CargoMass
+               + "\nHazardous: " + Hazardous + 
+               "\nDepth " + Depth
+               + "\nOwn weight: " + OwnWeight + 
+               "\nMax cargo load: " + MaxCargoLoad
                + "\nHeight: " + Height;
     }
 }

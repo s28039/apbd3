@@ -42,17 +42,7 @@ public class Ship
         containerList.Remove(container);
     }
 
-    public void Replace(Container oldContainer, Container newContainer)
-    {
-        containerList.Remove(oldContainer);
-        containerList.Add(newContainer);
-    }
 
-    public void Transfer(Container container, Ship ship)
-    {
-        ship.Load(container);
-        RemoveContainerFromShip(container);
-    }
 
     public void ListContainers()
     {
