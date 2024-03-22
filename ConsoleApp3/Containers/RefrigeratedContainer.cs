@@ -26,7 +26,7 @@ public class CoolingContainer : Container, IHazardNotifier
         {
             if (productType.Equals(this.productType))
             {
-                base.load(amount);     
+                base.Load(amount);     
             }
             else
             {
@@ -39,10 +39,10 @@ public class CoolingContainer : Container, IHazardNotifier
         }
     }
 
-    public override void empty()
+    public override void Empty()
     {
         double mass = CargoMass;
-        base.empty();
+        base.Empty();
     }
 
     public void notify()
