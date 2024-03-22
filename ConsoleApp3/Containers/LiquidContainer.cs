@@ -14,7 +14,7 @@ public class LiquidContainer : Container, IHazardNotifier
     public LiquidContainer(int cargoMass, int height, int ownWeight, int depth, string serialNumber, double maxCargoLoad, bool hazardous) : base(cargoMass, height, ownWeight, depth, maxCargoLoad)
     {
         this.Hazardous = hazardous;
-        this.SerialNumber = "Container Liquid: " + serialNumberCounter++;
+        this.SerialNumber = "Container Liquid Number " + serialNumberCounter++;
     }
 
 
@@ -38,6 +38,7 @@ public class LiquidContainer : Container, IHazardNotifier
                "\nMax cargo load: " 
                + MaxCargoLoad
                + "\nHeight: " 
+               
                + Height;
     }
 
