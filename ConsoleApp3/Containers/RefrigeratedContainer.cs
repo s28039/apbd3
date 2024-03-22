@@ -4,6 +4,7 @@
 
 using ConsoleApp3;
 using ConsoleApp3.Containers;
+using ConsoleApp3.Exceptions;
 
 namespace DefaultNamespace;
 

@@ -1,6 +1,10 @@
 ﻿namespace ConsoleApp3.Exceptions;
 
-public class OverFillException : Exception
+
+
+public class OverfillException : Exception
 {
-    // public OverFillException(message)
+    public OverfillException(string message) : base(message)
+    {
+    }
 }
