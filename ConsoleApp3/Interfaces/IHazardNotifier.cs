@@ -1,9 +1,6 @@
 ﻿namespace ConsoleApp3.Interfaces;
 
-public class IHazardNotifier
+public interface IHazardNotifier
 {
-    public IHazardNotifier()
-    {
-        Console.WriteLine("Test");
-    }
+    void notify();
 }

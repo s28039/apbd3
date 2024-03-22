@@ -1,29 +1,50 @@
 ﻿using ConsoleApp3.Interfaces;
 
-namespace ConsoleApp3.Containers;
 
-public class Container : IContainer
+
+namespace DefaultNamespace;
+
+public abstract class Container
 {
-    
-    
+    public int CargoMass { get; set; }
+    public int Height { get; set; }
+    public int OwnWeight { get; set; }
+    public int Depth { get; set; }
+    public string SerialNumber { get; set; }
+    public double MaxCargoLoad { get; set; }
+    public bool Hazardous { get; set; }
 
-    public int CargoWeight { get;set;}
-    public int CargoHeight { get;set;}
-    public int CargWeightAlone { get;set;}
-    public int CargoDeep { get;set;}
-    public int CargoSerialNumber { get;set;}
+    public Container(int cargoMass, int height, int ownWeight, int depth, double maxCargoLoad)
+    {
+        this.Hazardous = Hazardous;
+        this.CargoMass = cargoMass;
+        this.Height = height;
+        this.OwnWeight = ownWeight;
+        this.Depth = depth;
+        this.MaxCargoLoad = maxCargoLoad;
+    }
 
-    protected Container(int cargoWeight)
+    public virtual void Empty()
     {
-        
+        CargoMass = 0;
     }
-    public void Unload()
+
+    public virtual void Load(int amount)
     {
-        throw new NotImplementedException();
+        if (CargoMass + OwnWeight + amount <= MaxCargoLoad)
+        {
+            CargoMass = CargoMass + amount;
+        }
+        else
+        {
+            throw new Exception("OverfillException " + SerialNumber);
+        }
     }
-    
-    public virtual void Load(int cargoWeight)
+    public override string ToString()
     {
-        throw new OverflowException();
+        return "Container number: " + SerialNumber + "\nCargo mass " + CargoMass
+               + "\nHazardous: " + Hazardous + "\nDepth " + Depth
+               + "\nOwn weight: " + OwnWeight + "\nMax cargo load: " + MaxCargoLoad
+               + "\nHeight: " + Height;
     }
 }
