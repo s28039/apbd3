@@ -1,8 +1,4 @@
-﻿using ConsoleApp3.Interfaces;
-
-
-
-namespace DefaultNamespace;
+﻿namespace ConsoleApp3.Containers;
 
 public abstract class Container
 {

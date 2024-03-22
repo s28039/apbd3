@@ -1,4 +1,5 @@
-﻿using ConsoleApp3.Exceptions;
+﻿using ConsoleApp3.Containers;
+using ConsoleApp3.Exceptions;
 
 namespace ConsoleApp3;
 
@@ -34,22 +35,7 @@ public class Ship
             throw new OverfillException("Ship full");
         }
     }
-    public void Load(List<Container> containerList)
-    {
-        foreach (Container container in containerList)
-        {
-            if (loadedMass + container.CargoMass < maxWeight)
-            {
-                containerList.Add(container);
-                loadedMass += container.CargoMass;
-            }
-            else
-            {
-                Console.WriteLine("Exceeded maximum weight. Cannot load more containers.");
-                break;
-            }
-        }
-    }
+
 
     public void RemoveContainerFromShip(Container container)
     {

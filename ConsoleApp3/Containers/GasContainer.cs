@@ -13,7 +13,7 @@ public class GasContainer : Container, IHazardNotifier
     private static int serialNumberCounter = 1;
     public GasContainer(int cargoMass, int height, int ownWeight, int depth, double maxCargoLoad) : base(cargoMass, height, ownWeight, depth, maxCargoLoad)
     {
-        this.SerialNumber = "KON-G-" + serialNumberCounter++;
+        this.SerialNumber = "Container Gas" + serialNumberCounter++;
     }
 
     public override void Load(int amount)
@@ -32,7 +32,7 @@ public class GasContainer : Container, IHazardNotifier
     {
         double mass = CargoMass;
         base.Empty();
-        base.Load((int)(mass * 0.05));
+        base.Load((int)(mass * 0.5));
     }
 
     public void Notify()

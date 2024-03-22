@@ -1,26 +1,22 @@
-﻿using ConsoleApp3.Interfaces;
+﻿using ConsoleApp3.Exceptions;
+using ConsoleApp3.Interfaces;
+using DefaultNamespace;
 
+namespace ConsoleApp3.Containers;
 
-
-using ConsoleApp3;
-using ConsoleApp3.Containers;
-using ConsoleApp3.Exceptions;
-
-namespace DefaultNamespace;
-
-public class CoolingContainer : Container, IHazardNotifier
+public class RefrigeratedContainer : Container, IHazardNotifier
 {
     public double temperature;
     public string productType;
     private int serialNumberCounter = 1;
-    public CoolingContainer(double temperature, string productType, int cargoMass, int height, int ownWeight, int depth, string serialNumber, double maxCargoLoad) : base(cargoMass, height, ownWeight, depth, maxCargoLoad)
+    public RefrigeratedContainer(double temperature, string productType, int cargoMass, int height, int ownWeight, int depth, string serialNumber, double maxCargoLoad) : base(cargoMass, height, ownWeight, depth, maxCargoLoad)
     {
         this.temperature = temperature;
         this.productType = productType;
-        this.SerialNumber = "KON-C-" + serialNumberCounter++;
+        this.SerialNumber = "Container: " + serialNumberCounter++;
     }
 
-    public void load(int amount, int productTemperature, string productType)
+    public void Load(int amount, int productTemperature, string productType)
     {
         if (temperature >= productTemperature)
         {
